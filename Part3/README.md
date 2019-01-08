@@ -18,19 +18,23 @@ When answering the questions, remember to use all the resources at your disposal
  
  ### Does creating concurrent programs make the programmer's life easier? Harder? Maybe both?
  (Come back to this after you have worked on part 4 of this exercise)
- > *Your answer here*
+ > *Both for sure, independent things are good for concurrency, dependent things can become a mess if not handled properly.*
+ > *On a plus side, things definitely become more structured (code quality wahei)*
  
  ### What are the differences between processes, threads, green threads, and coroutines?
- > *Your answer here*
+ > *Threads are separate "branches" within the same program, and usually share memory space.*
+ > *Thus several threads can exist within a process.*
+ > *Green threads are handled by a runtime or a vm (hypervisor) rather than the OS.*
+ > *Coroutines are bits of code that run from start to finish, one at the time. They can seize to run other coroutines, then resume from where they seized.* 
  
  ### Which one of these do `pthread_create()` (C/POSIX), `threading.Thread()` (Python), `go` (Go) create?
- > *Your answer here*
+ > *Threads*
  
  ### How does pythons Global Interpreter Lock (GIL) influence the way a python Thread behaves?
- > *Your answer here*
+ > *It limits multiple threads from accessing the same memory simultaneously, although only for 100 atomic operations.*
  
  ### With this in mind: What is the workaround for the GIL (Hint: it's another module)?
- > *Your answer here*
+ > *Using the multiprocessing module in python.*
  
  ### What does `func GOMAXPROCS(n int) int` change? 
- > *Your answer here*
+ > *How many threads are allowed to run at a single time. Thus limiting this to 1 ensures that a single thread is able to do its job without other threads interfering.*
